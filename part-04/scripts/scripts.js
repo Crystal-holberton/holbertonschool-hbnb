@@ -6,17 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Cozy Cabin',
       price: '$120/night',
-      location: 'Aspen, CO'
+      location: 'Aspen, CO',
+      image: 'assets/Cozy Cabin.jpg'
     },
     {
-      name: 'Beachside Bungalow',
+      name: 'Beach Resort',
       price: '$150/night',
-      location: 'Malibu, CA'
+      location: 'Malibu, CA',
+      image: 'assets/Beach resort.jpg'
     },
     {
-      name: 'City Loft',
+      name: 'City Apartment',
       price: '$200/night',
-      location: 'New York, NY'
+      location: 'New York, NY',
+      image: 'assets/City Apartment.jpg'
     }
   ];
 
@@ -26,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = 'place-card';
       card.innerHTML = `
+        <img src="${place.image}" alt="${place.name}" class="place-img"/>
         <h3>${place.name}</h3>
         <p>${place.location}</p>
         <p><strong>${place.price}</strong></p>

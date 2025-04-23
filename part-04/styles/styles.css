@@ -70,6 +70,14 @@ footer {
   margin-bottom: 10px;
 }
 
+.place-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
 /* Buttons */
 .details-button,
 button {
