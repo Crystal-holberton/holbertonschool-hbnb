@@ -1,58 +1,122 @@
-/* Reset */
+/* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  header {
-    background-color: #ff8c00;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav a {
-    color: white;
-    margin-left: 1rem;
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  .filters {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  #places-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .place-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #eee;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+
+main {
+  padding: 2rem;
+}
+
+/* Header and Footer */
+header {
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.login-button {
+  color: #fff;
+  text-decoration: none;
+  background: #555;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Place Cards & Reviews */
+.place-card,
+.review-card {
+  background: #fff;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.place-details {
+  margin-bottom: 20px;
+}
+
+.place-info {
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.details-button,
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem, 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Forms */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Review Section */
+.add-review {
+  margin-top: 2rem;
+}
+
+.form {
+  margin-top: 1rem;
+}
