@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HBnB - Places</title>
+  <title>HBnB - HomePage</title>
   <link rel="icon" type="image/x-icon" href="assets/icon.ico">
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -20,8 +20,15 @@
 
   <main>
     <section id="filter" class="filters">
-      <input type="text" id="search" placeholder="Select Price" />
+      <label for="filter">Places Listing:</label>
+      <input type="text" id="search" placeholder="Search Place..." />
       <button id="filterBtn">Search</button>
+      <label for="price-filter">Max Price:</label>
+      <select id="price-filter">
+        <option value="all">All</option>
+        <option value="100">Under $100</option>
+        <option value="200">Under $200</option>
+      </select>
     </section>
 
     <section id="places-container" class="places">
