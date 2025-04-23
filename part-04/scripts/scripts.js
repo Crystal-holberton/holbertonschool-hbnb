@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = 'place-card';
       card.innerHTML = `
-        <img src="${place.image}" alt="${place.name}" class="place-img"/>
+        <img src="${place.image}" alt="${place.name}" class="place-img" />
         <h3>${place.name}</h3>
         <p>${place.location}</p>
         <p><strong>${place.price}</strong></p>
