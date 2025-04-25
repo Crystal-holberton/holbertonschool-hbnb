@@ -20,15 +20,14 @@
 
   <main>
     <section id="filter" class="filters">
-      <label for="filter">Places Listing</label>
-      <input type="text" id="search" placeholder="Search Place..." />
-      <button id="filterBtn">Search</button>
-      <label for="price-filter">Max Price:</label>
+      <div class="filter-controls">
+      <label for="price-filter" class="price-label">Max Price:</label>
       <select id="price-filter">
         <option value="all">All</option>
         <option value="100">Under $100</option>
         <option value="200">Under $200</option>
       </select>
+    </div>
     </section>
 
     <section id="places-container" class="places">
