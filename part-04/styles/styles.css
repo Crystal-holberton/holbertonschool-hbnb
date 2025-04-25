@@ -10,6 +10,7 @@ body {
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
+  font-family: Arial, sans-serif;
 }
 
 main {
@@ -18,7 +19,15 @@ main {
   padding: 2rem;
 }
 
-/* Header and Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Header and Navigation */
 header {
   background-color: #ff8c00;
   color: #fff;
@@ -34,88 +43,86 @@ nav a {
   margin-left: 1rem;
 }
 
-.navbar_container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+nav a:hover {
+  text-decoration: underline;
 }
 
 .logo {
   height: 40px;
 }
 
-.login-button {
-  color: #fff;
-  text-decoration: none;
-  background: #555;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+/* Login Page Styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ff8c00;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
+.header-container .logo img {
+  height: 40px;
+}
+
+.login-form {
+  background: #fff;
+  padding:  2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
 }
 
-/* Filter Bar Styling */
-.filters {
-  background: #fff;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
+.login-form h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 180px;
+.form-group {
+  margin-bottom: 1rem;
 }
 
-.filters button {
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
   background-color: #007bff;
   color: white;
-  padding: 0.5rem 1rem;
   border: none;
+  padding: 0.75rem;
+  width: 100%;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.filters button:hover {
+button:hover {
   background-color: #0056b3;
 }
 
-.price-lable {
-  margin-left: 1rem;
-  margin-right: -0.5rem;
+#loginError {
+  font-size: 0.875rem;
+  color: red;
+  text-align: center;
 }
 
 /* Place Cards & Reviews */
-.places {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem
-}
-
 .place-card,
 .review-card {
   background: #fff;
-  padding: 1rem;
+  padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-}
-
-.place-card:hover {
-  transform: translateY(-3px);
+  margin: 20px 0;
+  border: 1px solid #ddd;
 }
 
 .place-details {
@@ -127,7 +134,7 @@ footer {
 }
 
 .place-img {
-  width: 100%;
+  width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 6px;
@@ -140,7 +147,7 @@ button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.5rem, 1rem;
+  padding: 0.5rem 1rem;
   margin-top: 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -183,4 +190,40 @@ textarea {
 
 .form {
   margin-top: 1rem;
+}
+
+/* Filters Section */
+.filters {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.filters label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.filters input,
+.filters select {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.filters button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
 }
