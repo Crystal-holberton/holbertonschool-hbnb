@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="HBnB Logo" class="logo">
+  <header class="header-container">
+    <div class="logo">
+      <img src="assets/logo.png" alt="HBnB Logo" class="logo">
+    </div>
     <nav>
       <a href="index.html" id="places-list">Home</a>
       <a href="place.html" id="place-detail">Places</a>
@@ -18,9 +20,9 @@
   </header>
 
   <main>
-    <section class="add-review-form">
+    <section class="review-form-section">
       <h2>Add a Review</h2>
-      <form id="reviewForm">
+      <form id="reviewForm" class="review-form">
         <input type="text" id="reviewerName" placeholder="Your name" required />
         <textarea id="reviewText" placeholder="Write your review..." required></textarea>
         <select id="rating" required>

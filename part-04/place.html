@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="HBnB Logo" class="logo">
+  <header class="header-container">
+    <div class="logo">
+      <img src="assets/logo.png" alt="HBnB Logo" class="logo">
+    </div>
     <nav>
       <a href="index.html" id="places-list">Home</a>
       <a href="add_review.html" id="reviewForm">Reviews</a>
@@ -18,19 +20,21 @@
   </header>
 
   <main>
-    <section id="place-detail">
-      <h2>Place Name</h2>
-      <p><strong>Location:</strong> Sample City, State</p>
-      <p><strong>Price:</strong> $150/night</p>
-      <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <p><strong>Amenities:</strong> Wi-Fi, Air Conditioning, Pool</p>
+    <section id="place-details">
+      <h2 class="place-title">Place Name</h2>
+      <div class="place-info">
+        <p><strong>Location:</strong> Sample City, State</p>
+        <p><strong>Price:</strong> $150/night</p>
+        <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p><strong>Amenities:</strong> Wi-Fi, Air Conditioning, Pool</p>
+      </div>
     </section>
 
-    <section id="reviews">
+    <section id="review-section">
       <h3>Reviews</h3>
-      <ul id="reviewList">
-        <li><strong>Jane:</strong> Amazing place! 5 stars.</li>
-        <li><strong>Tom:</strong> Cozy and clean, would stay again.</li>
+      <ul id="reviewList" class="review-list">
+        <li class="review-card"><strong>Jane:</strong> Amazing place! 5 stars.</li>
+        <li class="review-card"><strong>Tom:</strong> Cozy and clean, would stay again.</li>
       </ul>
     </section>
   </main>
