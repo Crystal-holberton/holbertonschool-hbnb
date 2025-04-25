@@ -13,21 +13,28 @@
     <nav class="navbar">
       <div class="navbar_container">
         <a href="place.html" id="places-details">Places</a>
-        <a href="login.html" id="login-link" class="login-button">Login</a>
+        <a href="login.html" class="login-button">Login</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section id="filter" class="filters">
-      <div class="filter-controls">
-      <label for="price-filter" class="price-label">Max Price:</label>
-      <select id="price-filter">
-        <option value="all">All</option>
-        <option value="100">Under $100</option>
-        <option value="200">Under $200</option>
-      </select>
-    </div>
+    <section class="filters">
+      <div class="filter-group">
+        <label for="search">Search Place:</label>
+        <input type="text" id="search" placeholder="Search Place...">
+      </div>
+
+      <div>
+        <label for="price-filter" class="price-label">Max Price:</label>
+        <select id="price-filter">
+          <option value="all">All</option>
+          <option value="100">Under $100</option>
+          <option value="200">Under $200</option>
+        </select>
+      </div>
+      
+      <button id="filterBtn">Search</button>
     </section>
 
     <section id="places-container" class="places">

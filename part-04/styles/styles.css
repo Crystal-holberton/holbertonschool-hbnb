@@ -9,9 +9,12 @@
 body {
   background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
 }
 
 main {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
 }
 
@@ -29,6 +32,12 @@ nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 1rem;
+}
+
+.navbar_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
@@ -53,17 +62,35 @@ footer {
 
 /* Filter Bar Styling */
 .filters {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  background: #fff;
+  padding: 1.5rem;
   margin-bottom: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.filter-controls {
+.filter-group {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+
+.filters button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
 }
 
 .price-lable {
@@ -73,19 +100,22 @@ footer {
 
 /* Place Cards & Reviews */
 .places {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem
 }
 
 .place-card,
 .review-card {
   background: #fff;
-  margin: 20px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 1rem;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-3px);
 }
 
 .place-details {
@@ -97,7 +127,7 @@ footer {
 }
 
 .place-img {
-  width: 180px;
+  width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 6px;
