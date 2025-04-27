@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const places = [
       {
         name: 'Cozy Cabin',
-        price: '$80/night',
+        price: '$120/night',
         location: 'Aspen, CO',
         image: 'assets/Cozy Cabin.jpg'
       },
@@ -18,25 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         name: 'City Apartment',
-        price: '$250/night',
+        price: '$200/night',
         location: 'New York, NY',
         image: 'assets/City Apartment.jpg'
       }
     ];
 
     function displayPlaces(data) {
-      placesContainer.innerHTML = '';
-      data.forEach(place => {
-        const card = document.createElement('div');
-        card.className = 'place-card';
-        card.innerHTML = `
-          <img src="${place.image}" alt="${place.name}" class="place-img" />
-          <h3>${place.name}</h3>
-          <p>${place.location}</p>
-          <p><strong>${place.price}</strong></p>
-        `;
-        placesContainer.appendChild(card);
-      });
+      placesContainer.innerHTML = '<p class="loading">Loading places...</p>';
+
+      setTimeout(() => {
+        placesContainer.innerHTML = '';
+        data.forEach(place => {
+          const card = document.createElement('div');
+          card.className = 'place-card';
+          card.innerHTML = `
+            <img src="${place.image}" alt="${place.name}" class="place-img" />
+            <h3>${place.name}</h3>
+            <p>${place.location}</p>
+            <p><strong>${place.price}</strong></p>
+          `;
+          placesContainer.appendChild(card);
+        });
+      }, 1000); // Simulate 1s loading
     }
 
     displayPlaces(places);
@@ -68,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
       } else {
         loginError.textContent = 'Invalid credentials';
+        clearMessage(loginError);
       }
     });
   }
@@ -89,6 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         reviewMsg.textContent = 'Please complete all fields.';
       }
+      clearMessage(reviewMsg);
     });
+  }
+
+  // --- Helper: Clear a message after 3 seconds ---
+  function clearMessage(element) {
+    setTimeout(() => {
+      element.textContent = '';
+    }, 3000);
   }
 });
