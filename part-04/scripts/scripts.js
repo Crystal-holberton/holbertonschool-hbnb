@@ -59,24 +59,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Login Page: Handle login form ---
+document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
-
+ 
   if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const loginError = document.getElementById('loginError');
 
-      if (email === 'test@example.com' && password === '123') {
-        window.location.href = 'index.html';
-      } else {
-        loginError.textContent = 'Invalid credentials';
-        clearMessage(loginError);
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+  
+      try {
+        const response = await fetch('https://localhost:5000/api/v1/users/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          document.cookie = `token=${data.access_token}; path=/;`;
+          window.location.href = 'index.html'; // Redirect to home
+        } else {
+          const errorData = await response.json();
+          document.getElementById('loginError').textContent = errorData.message || 'Login failed. Please check your credentials.';
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        document.getElementById('loginError').textContent = 'An error occurred. Please try again later.';
       }
     });
   }
-
+});
+  
   // --- Add Review Page: Handle review form ---
   const reviewForm = document.getElementById('reviewForm');
 
